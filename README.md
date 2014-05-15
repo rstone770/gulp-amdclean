@@ -1,18 +1,14 @@
 gulp-amdclean [![Build Status](https://travis-ci.org/rstone770/gulp-amdclean.png?branch=master)](https://travis-ci.org/rstone770/gulp-amdclean) [![NPM version](https://badge.fury.io/js/gulp-amdclean.png)](http://badge.fury.io/js/gulp-amdclean)
 ====
 
-A very simple streaming adapter for the very awesome [amdclean](https://github.com/gfranko/amdclean).
+A gulp plugin for the very awesome [amdclean](https://github.com/gfranko/amdclean).
 
 # Use
-
-if you are having issues, and its not resolved just let me know. I have 3 devices wired into github, so chances are i'll get something unless I get tired of you.
-
-Installation of this gulp piece could not be more simple. 
+After installing Just add it into your build chain via pipe.
+ 
 ```javscript
 npm install gulp-amdclean
 ```
-
-Simply 'pop' it into your gulp pipeline along with any options you would normally use for [amdclean](https://github.com/gfranko/amdclean).
 
 ```javascript
 var gulp      = require('gulp'),
@@ -29,15 +25,16 @@ gulp.tasks('build', ['lint', 'test'], function() {
 });
 ```
 
-If your thinking about any of this, let me know. This segment should be another mindless blop in the pipline. This is supposed to be easy god damnit.
+Any option that youd normally use with [amdclean](https://github.com/gfranko/amdclean) will work.
 
 # Setup
 
 If for some reason you have the urge to hack on this lib simply use;
 ```javascript
-npm install gulp -g && npm install && gulp
+npm install
+gulp
 ```
-the only thing really needed here is gulp as long as the first 2 command are run before hand.
+Gulp needs to be globaly installed before hand.
 
 # Contrib
 
