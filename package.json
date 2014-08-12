@@ -1,10 +1,10 @@
 {
   "name": "gulp-amdclean",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "A gulp wrapper for amdclean.",
-  "main": "./src/gulp-amdclean.js",
+  "main": "bin/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp spec"
   },
   "repository": {
     "type": "git",
@@ -21,16 +21,18 @@
   },
   "homepage": "https://github.com/rstone770/gulp-amdclean",
   "dependencies": {
-    "amdclean": "~2.0.0",
+    "map-stream": "^0.1.0",
     "underscore": "^1.6.0",
-    "map-stream": "^0.1.0"
+    "amdclean": "^2.2.4"
   },
   "devDependencies": {
-    "gulp": "^3.5.6",
-    "glob": "^3.2.9",
+    "vinyl": "^0.3.2",
+    "coffee-script": "^1.7.1",
     "chai": "^1.9.1",
-    "vinyl": "^0.2.3",
-    "gulp-mocha": "^0.4.1",
-    "gulp-jshint": "^1.5.1"
+    "glob": "^4.0.5",
+    "gulp-mocha": "^0.5.2",
+    "gulp": "^3.8.7",
+    "gulp-coffee": "~2.1.1",
+    "gutil": "~1.5.0"
   }
 }

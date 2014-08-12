@@ -1,7 +1,7 @@
 gulp-amdclean [![Build Status](https://travis-ci.org/rstone770/gulp-amdclean.png?branch=master)](https://travis-ci.org/rstone770/gulp-amdclean) [![NPM version](https://badge.fury.io/js/gulp-amdclean.png)](http://badge.fury.io/js/gulp-amdclean)
 ====
 
-A gulp plugin for the very awesome [amdclean](https://github.com/gfranko/amdclean).
+A gulp plugin for the very awesome [amdclean](https://github.com/gfranko/amdclean). Now with 100% more amdclean.
 
 # Use
 After installing Just add it into your build chain via pipe.
@@ -9,15 +9,15 @@ After installing Just add it into your build chain via pipe.
 ```javscript
 npm install gulp-amdclean
 ```
-
+Then use the factory to return a nice amdclean filtered stream.
 ```javascript
 var gulp      = require('gulp'),
-    amdclean  = require('gulp-amdclean');
+    Amdclean  = require('gulp-amdclean');
 
 gulp.tasks('build', ['lint', 'test'], function() {
   return gulp
     .src(['src/main.js'])
-    .pipe(amdclean({
+    .pipe(Amdclean.gulp({
       'prefixMode': 'standard'
       // some other options
     })
@@ -25,16 +25,15 @@ gulp.tasks('build', ['lint', 'test'], function() {
 });
 ```
 
-Any option that youd normally use with [amdclean](https://github.com/gfranko/amdclean) will work.
+Because right now i have to manually update the amdclean dependency and that may be a slow process; the amdclean filter supports DI so you can
+inject any version you need. Simply use the second argument to pass your own version of amdclean and your all set.
 
-# Setup
-
-If for some reason you have the urge to hack on this lib simply use;
 ```javascript
-npm install
-gulp
+var amdclean = require('amdclean'), // your amdclean
+	filter 	 = require('gulp-amdclean').gulp(options, amdclean) // a filter with your options and amdclean.
 ```
-Gulp needs to be globaly installed before hand.
+
+Any option that you'd normally use with [amdclean](https://github.com/gfranko/amdclean) will work.
 
 # Contrib
 
