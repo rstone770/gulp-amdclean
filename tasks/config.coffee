@@ -1,22 +1,23 @@
-module.exports = 
-  
+module.exports =
+
   default:
     deps: ['coffee']
 
-  # Test options
   spec:
     paths: ["#{process.cwd()}/spec/specs/**/*.coffee"]
 
-    options: 
+    options:
       reporter: 'dot'
 
-  # Coffee compiler options
   coffee:
     paths: ["#{process.cwd()}/src/**/*.coffee"]
 
     options:
       bare: true
 
-    deps: ['spec']
+    deps: ['lint', 'spec']
 
-    out: "#{process.cwd()}/bin" 
+    out: "#{process.cwd()}/bin"
+
+  lint:
+    paths: ["#{process.cwd()}/{src,tasks,spec}/**/*.coffee"]

@@ -13,7 +13,7 @@ describe 'filters/Filter', ->
   filter = null
 
   beforeEach ->
-    filter = new Filter  
+    filter = new Filter
 
   describe 'process', ->
     it 'should throw an errors/NotImplemented.', ->

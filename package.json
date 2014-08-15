@@ -1,6 +1,6 @@
 {
   "name": "gulp-amdclean",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A gulp wrapper for amdclean.",
   "main": "bin/index.js",
   "scripts": {
@@ -33,6 +33,7 @@
     "gulp-mocha": "^0.5.2",
     "gulp": "^3.8.7",
     "gulp-coffee": "~2.1.1",
-    "gutil": "~1.5.0"
+    "gutil": "~1.5.0",
+    "gulp-coffeelint": "~0.3.3"
   }
 }

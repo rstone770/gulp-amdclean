@@ -5,14 +5,10 @@ NotImplementedError = require '../errors/NotImplemented'
 
 module.exports =
 
+  # an abstract filter class that simply allows block transforms
+  # to be converted into streams with basic validation
   class Filter
 
-    # Filters data via async callbacks
-    # 
-    # @throws {errors/StreamingError} if a data stream is passed instead of chunks
-    # 
-    # @param {!Object}   next
-    # @param {!Function} 
     filter: (data, next) ->
       if data.isNull()
         return next null, data
@@ -25,17 +21,9 @@ module.exports =
 
       next null, data
 
-    # Process the data object.
-    # 
-    # @throws {errors/NotImplementedError}
-    # 
-    # @param {!Object}
     process: (data) ->
       throw new NotImplementedError
 
-    # Returns stream wrapped filter
-    # 
-    # @Returns {!Stream}
     stream: () ->
       return @_stream if @_stream?
 

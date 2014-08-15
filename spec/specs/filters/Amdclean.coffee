@@ -28,8 +28,8 @@ describe 'filters/Amdclean', ->
       result.should.equal amdclean.clean code: input().contents.toString()
 
     it 'should pass through any options to amdclean.', ->
-      filter = new AmdcleanFilter 
-        wrap: 
+      filter = new AmdcleanFilter
+        wrap:
           start: 'start'
           end: 'end'
 
@@ -38,7 +38,7 @@ describe 'filters/Amdclean', ->
       result.should.equal 'startend'
 
     it 'should use optional amdclean instance if given.', ->
-      amdclean = 
+      amdclean =
         clean: (options) ->
           return 'transformed'
 
