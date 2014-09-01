@@ -1,4 +1,4 @@
-gulp-amdclean [![Build Status](https://travis-ci.org/rstone770/gulp-amdclean.png?branch=master)](https://travis-ci.org/rstone770/gulp-amdclean) [![NPM version](https://badge.fury.io/js/gulp-amdclean.png)](http://badge.fury.io/js/gulp-amdclean)
+gulp-amdclean [![Build Status](https://travis-ci.org/rstone770/gulp-amdclean.png?branch=master)](https://travis-ci.org/rstone770/gulp-amdclean) [![NPM version](https://badge.fury.io/js/gulp-amdclean.png)](http://badge.fury.io/js/gulp-amdclean) [![NPM Downloads](http://img.shields.io/npm/dm/gulp-amdclean.svg)](http://img.shields.io/npm/dm/gulp-amdclean.svg)
 ====
 
 A gulp plugin for the very awesome [amdclean](https://github.com/gfranko/amdclean). Now with 100% more amdclean.
