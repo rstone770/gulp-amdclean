@@ -1,7 +1,8 @@
 through = require 'map-stream'
 
-StreamingError      = require '../errors/Streaming'
-NotImplementedError = require '../errors/NotImplemented'
+StreamingError       = require '../errors/Streaming'
+NotImplementedError  = require '../errors/NotImplemented'
+vinylSourcemapsApply = require 'vinyl-sourcemaps-apply'
 
 module.exports =
 
@@ -17,7 +18,20 @@ module.exports =
       
       filtered = @process data
 
-      data.contents = new Buffer filtered
+      if (!!filtered.code)
+        data.contents = new Buffer filtered.code
+        if data.sourceMap
+          map = JSON.parse filtered.map.toString()
+          # console.log('---');
+          # console.log(data.path);
+          # console.log(data.relative);
+          # console.log(map.sources);
+          # console.log('---');
+          map.file = data.relative
+          vinylSourcemapsApply data, map
+
+      else
+        data.contents = new Buffer filtered
 
       next null, data
 

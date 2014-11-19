@@ -21,5 +21,13 @@ module.exports =
       options  = _.extend {}, @options,
         code: data.contents.toString()
 
+      if data.sourceMap
+        options.sourceMap = data.sourceMap
+        options.esprima = options.esprima || {}
+        options.esprima.source = data.relative
+        options.escodegen = options.escodegen || {}
+        options.escodegen.sourceMap = true
+        options.escodegen.sourceMapWithCode = true
+
       @_amdclean.clean options
 

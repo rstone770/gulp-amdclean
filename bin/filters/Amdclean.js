@@ -30,6 +30,14 @@ module.exports = AmdcleanFilter = (function(_super) {
     options = _.extend({}, this.options, {
       code: data.contents.toString()
     });
+    if (data.sourceMap) {
+      options.sourceMap = data.sourceMap;
+      options.esprima = options.esprima || {};
+      options.esprima.source = data.relative;
+      options.escodegen = options.escodegen || {};
+      options.escodegen.sourceMap = true;
+      options.escodegen.sourceMapWithCode = true;
+    }
     return this._amdclean.clean(options);
   };
 
