@@ -21,13 +21,20 @@ module.exports =
       options  = _.extend {}, @options,
         code: data.contents.toString()
 
+      # if file has sourceMap property it means user had set up gulp-sourcemaps
       if data.sourceMap
+        # TODO remove the wrap check when
+        # https://github.com/gfranko/amdclean/issues/71 will be fixed
+        if (!!options.wrap)
+          throw new Error('Wrap parameter should not be used ' +
+            'together with source maps')
         options.sourceMap = data.sourceMap
         options.esprima = options.esprima || {}
         options.esprima.source = data.relative
         options.escodegen = options.escodegen || {}
         options.escodegen.sourceMap = true
         options.escodegen.sourceMapWithCode = true
+        options.wrap = false
 
       @_amdclean.clean options
 
