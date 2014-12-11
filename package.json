@@ -23,7 +23,8 @@
   "dependencies": {
     "map-stream": "^0.1.0",
     "underscore": "^1.6.0",
-    "amdclean": "^2.2.4"
+    "amdclean": "^2.4.0",
+    "vinyl-sourcemaps-apply": "^0.1.4"
   },
   "devDependencies": {
     "vinyl": "^0.3.2",
