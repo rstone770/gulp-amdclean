@@ -1,6 +1,6 @@
-var AmdcleanFilter, Filter, amdclean, through, _,
-  __hasProp = {}.hasOwnProperty,
-  __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; };
+var AmdcleanFilter, Filter, _, amdclean, through,
+  extend = function(child, parent) { for (var key in parent) { if (hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor(); child.__super__ = parent.prototype; return child; },
+  hasProp = {}.hasOwnProperty;
 
 _ = require('underscore');
 
@@ -10,8 +10,8 @@ through = require('map-stream');
 
 Filter = require('./Filter');
 
-module.exports = AmdcleanFilter = (function(_super) {
-  __extends(AmdcleanFilter, _super);
+module.exports = AmdcleanFilter = (function(superClass) {
+  extend(AmdcleanFilter, superClass);
 
   AmdcleanFilter.gulp = function(options, amdclean) {
     var filter;
@@ -19,8 +19,8 @@ module.exports = AmdcleanFilter = (function(_super) {
     return filter.stream();
   };
 
-  function AmdcleanFilter(options, _amdclean) {
-    this.options = options != null ? options : {};
+  function AmdcleanFilter(options1, _amdclean) {
+    this.options = options1 != null ? options1 : {};
     this._amdclean = _amdclean != null ? _amdclean : amdclean;
     AmdcleanFilter.__super__.constructor.apply(this, arguments);
   }

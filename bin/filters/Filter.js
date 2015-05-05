@@ -1,5 +1,5 @@
 var Filter, NotImplementedError, StreamingError, through, vinylSourcemapsApply,
-  __slice = [].slice;
+  slice = [].slice;
 
 through = require('map-stream');
 
@@ -44,7 +44,7 @@ module.exports = Filter = (function() {
     return this._stream = through((function(_this) {
       return function() {
         var args;
-        args = 1 <= arguments.length ? __slice.call(arguments, 0) : [];
+        args = 1 <= arguments.length ? slice.call(arguments, 0) : [];
         return _this.filter.apply(_this, args);
       };
     })(this));
